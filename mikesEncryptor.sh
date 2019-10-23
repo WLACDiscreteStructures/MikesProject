@@ -17,7 +17,21 @@ clear
 encryptionChoice=$( cat choice.tmp)
 $(rm -f choice.tmp)
 
-echo $encryptionChoice
-echo $theString
 
-exit 0
+if [ $encryptionChoice == "1" ] 
+then
+	sh -c "echo '$theString' | md5"
+	sh -c "echo '$theString' | md5 > encrpytedOutput.txt"
+elif [ $encryptionChoice == 2 ]
+then
+	sh -c "echo '$theString' | sha256"
+	sh -c "echo '$theString' | sha256> encrpytedOutput.txt"
+elif [ $encryptionChoice == 3 ]
+then
+	sh -c "echo '$theString' | sha512"
+	sh -c "echo '$theString' | sha512> encrpytedOutput.txt"
+else
+	echo Please enter a valid choice 
+fi
+
+exit 
