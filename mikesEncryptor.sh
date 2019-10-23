@@ -5,6 +5,7 @@ dialog --clear --inputbox "Please enter a string you would like to convert : " 1
 clear       
 
 theString=$( cat theString.tmp)
+$(rm -f theString.tmp)
 
 dialog --clear --inputbox "Choose an option :\n
 1) md5 sum\n
@@ -14,6 +15,8 @@ dialog --clear --inputbox "Choose an option :\n
 clear       
 
 encryptionChoice=$( cat choice.tmp)
+$(rm -f choice.tmp)
+
 echo $encryptionChoice
 echo $theString
 
