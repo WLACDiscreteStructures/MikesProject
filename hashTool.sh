@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dialog --clear --inputbox "Please enter a string you would like to convert : " 10 60 2> theString.tmp  
+dialog --clear --inputbox "Please enter a string you would like to Convert : " 10 60 2> theString.tmp  
 
 clear       
 
@@ -21,15 +21,15 @@ $(rm -f choice.tmp)
 if [ $encryptionChoice == "1" ] 
 then
 	sh -c "echo '$theString' | md5"
-	sh -c "echo '$theString' | md5 > encrpytedOutput.txt"
+	sh -c "echo '$theString' | md5 > Output.txt"
 elif [ $encryptionChoice == 2 ]
 then
 	sh -c "echo '$theString' | sha256"
-	sh -c "echo '$theString' | sha256> encrpytedOutput.txt"
+	sh -c "echo '$theString' | sha256> Output.txt"
 elif [ $encryptionChoice == 3 ]
 then
 	sh -c "echo '$theString' | sha512"
-	sh -c "echo '$theString' | sha512> encrpytedOutput.txt"
+	sh -c "echo '$theString' | sha512> Output.txt"
 else
 	echo Please enter a valid choice 
 fi
