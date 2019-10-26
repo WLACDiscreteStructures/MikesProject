@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 dialog --clear --inputbox "Please enter a string you would like to Convert : " 10 60 2> theString.tmp  
 
 clear       
